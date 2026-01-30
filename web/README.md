@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Fairward - AI Healthcare Auditor
 
-## Getting Started
+This is the codebase for **Fairward**, an AI-powered tool that helps patients audit their medical bills, detect overcharges, and generate dispute letters.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Instant Audit**: Upload a bill (PDF/Image) and get results in seconds.
+*   **Price Comparison**: Benchmarks charges against Medicare and commercial rates.
+*   **Auto-Dispute**: Generates a legally-sound dispute letter.
+*   **Demo Mode**: Built-in mock scenarios (MRI, Blood Work, ER) for pitch demonstrations.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Stack
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+*   **Framework**: Next.js 15 (App Router)
+*   **Styling**: Tailwind CSS
+*   **AI**: OpenAI GPT-4o (Vision & Text Analysis)
+*   **PDF Parsing**: `pdf-parse`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Deployment to Vercel
 
-## Learn More
+This project is ready to deploy on Vercel.
 
-To learn more about Next.js, take a look at the following resources:
+### Option 1: One-Click Deploy
+Click the button below to deploy this project. Vercel will automatically detect the `web` folder.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/Aniridh/JustCare/tree/main/web)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Manual Import
+1.  Push this code to your GitHub repository.
+2.  Go to [Vercel](https://vercel.com) and click **"Add New..."** -> **"Project"**.
+3.  Import your repository (`JustCare`).
+4.  **Important**: In the "Configure Project" screen, look for **"Root Directory"**.
+    *   Click "Edit" and select `web`.
+5.  Add your Environment Variables:
+    *   `OPENAI_API_KEY`: Your OpenAI API Key (required for real analysis).
+6.  Click **Deploy**.
 
-## Deploy on Vercel
+## 🏃‍♂️ Running Locally
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1.  Navigate to the web directory:
+    ```bash
+    cd web
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Set up environment variables:
+    *   Create `.env.local`
+    *   Add `OPENAI_API_KEY=sk-...`
+4.  Run the dev server:
+    ```bash
+    npm run dev
+    ```
